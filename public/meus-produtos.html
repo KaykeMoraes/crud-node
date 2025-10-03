@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meus Produtos - Start Tecnologia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1>Start Tecnologia</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="meus-produtos.html">Meus Produtos</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Criar Conta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <button class="voltar-btn" onclick="window.history.back()">← Voltar</button>
+        <h2>Meus Produtos</h2>
+
+        <form id="addProductForm">
+            <input type="text" id="prodName" placeholder="Nome do produto" required>
+            <input type="number" id="prodPrice" placeholder="Preço" required>
+            <button type="submit">Adicionar Produto</button>
+        </form>
+
+        <section id="produtosList" class="produtos"></section>
+        <button id="logoutBtn" onclick="logout()">Sair</button>
+    </div>
+
+</body>
+
+</html>

@@ -3,34 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login - Start Tecnologia</title>
+    <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" defer></script>
 </head>
 
 <body>
 
-    <header class="main-header">
-            <h1>Start Tecnologia</h1>
-            <nav>
-                <ul>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="meus-produtos.html">Meus Produtos</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Criar Conta</a></li>
-                </ul>
-            </nav>
-    </header>
+<header>
+    <h1>Start</h1>
+    <nav>
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Criar Conta</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div class="small-container">
-        <button class="voltar-btn" onclick="window.history.back()">← Voltar</button>
-        <h2>Login</h2>
+<div class="container">
+
+    <h2>Login</h2>
+
+    <form>
         <input type="text" id="loginUsername" placeholder="Usuário">
         <input type="password" id="loginPassword" placeholder="Senha">
-        <button onclick="login()">Entrar</button>
-        <p id="loginMsg"></p>
-        <p>Não tem conta? <a href="register.html">Criar conta</a></p>
-    </div>
+    </form>
+
+    <button onclick="login()">Entrar</button>
+
+    <p id="loginMsg"></p>
+
+    <p>Não tem conta? <a href="register.html">Criar conta</a>
+
+</div>
 
 </body>
 

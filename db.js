@@ -3,7 +3,7 @@ const mysql = require("mysql2");
 const db = mysql.createPool({
     host: "localhost",
     user: "root",
-    password: "kayak.10", // altere para sua senha
+    password: "password",
     database: "crud_node"
 }).promise();
 

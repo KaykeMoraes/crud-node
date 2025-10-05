@@ -1,11 +1,7 @@
 const db = require('../db');
 
 exports.cadastrar = async (req, res) => {
-    const {
-        name,
-        price,
-        userId
-    } = req.body;
+    const { name, price, userId } = req.body;
     try {
         const [result] = await db.query(
             "INSERT INTO produtos (name, price, user_id) VALUES (?, ?, ?)",
@@ -15,12 +11,10 @@ exports.cadastrar = async (req, res) => {
             id: result.insertId,
             name,
             price,
-            userId
+            username: userId
         });
     } catch (err) {
-        res.status(500).json({
-            erro: err.message
-        });
+        res.status(500).json({ erro: err.message });
     }
 };
 
@@ -33,45 +27,20 @@ exports.listarPorUsuario = async (req, res) => {
         );
         res.json(rows);
     } catch (err) {
-        res.status(500).json({
-            erro: err.message
-        });
-    }
-};
-
-exports.atualizar = async (req, res) => {
-    const {
-        id,
-        name,
-        price
-    } = req.body;
-    try {
-        await db.query(
-            "UPDATE produtos SET name = ?, price = ? WHERE id = ?",
-            [name, price, id]
-        );
-        res.json({
-            id,
-            name,
-            price
-        });
-    } catch (err) {
-        res.status(500).json({
-            erro: err.message
-        });
+        res.status(500).json({ erro: err.message });
     }
 };
 
 exports.deletar = async (req, res) => {
-    const id = req.params.id;
+    const id = parseInt(req.params.id);
+    if (isNaN(id)) {
+        return res.status(400).json({ erro: "ID do produto inválido" });
+    }
+
     try {
         await db.query("DELETE FROM produtos WHERE id = ?", [id]);
-        res.json({
-            message: "Produto deletado"
-        });
+        res.json({ message: "Produto deletado" });
     } catch (err) {
-        res.status(500).json({
-            erro: err.message
-        });
+        res.status(500).json({ erro: err.message });
     }
 };

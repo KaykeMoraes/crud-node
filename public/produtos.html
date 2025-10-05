@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Produtos - Start Tecnologia</title>
+    <title>Produtos</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" defer></script>
 </head>
@@ -11,25 +11,37 @@
 <body>
 
     <header class="main-header">
-        <div class="container">
-            <h1>Start Tecnologia</h1>
+        <div>
+            <h1>Start</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Início</a></li>
                     <li><a href="produtos.html">Produtos</a></li>
                     <li><a href="meus-produtos.html">Meus Produtos</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Criar Conta</a></li>
+                    <li><a href="profile.html">Perfil</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <button class="voltar-btn" onclick="window.history.back()">← Voltar</button>
+
         <h2>Todos os Produtos</h2>
+
+        <!-- Container para todos os produtos -->
         <section id="produtosList" class="produtos"></section>
     </div>
+
+    <!-- Modal Full-screen -->
+    <div id="modalProduto" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalName">Nome do Produto</h3>
+            <p id="modalPrice">Preço: R$ 0,00</p>
+            <p id="modalCreator">Criado por: Usuário</p>
+        </div>
+    </div>
+
+    <button class="logoutBtn" onclick="logout()">Logout</button>
 
 </body>
 
